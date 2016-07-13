@@ -13,7 +13,7 @@ def print_diagonals(arr):
     4 
 
 
-    >>> arr = [[9, 3,], [8, 6], [5, 5], [1, 2]]
+    >>> arr = [[9, 3], [8, 6], [5, 5], [1, 2]]
     >>> print_diagonals(arr)
     9 
     3 8 
@@ -42,10 +42,9 @@ def print_diagonals(arr):
         else:
             j = i - (len(arr[0]) - 1)
 
-
         while i - j >= 0 and j < len(arr):
 
-            if i - j < len(arr):
+            if i - j < len(arr[0]):
                 diag += str(arr[j][i - j]) + " "
 
             j += 1
