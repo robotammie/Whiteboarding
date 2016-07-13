@@ -44,10 +44,7 @@ def print_diagonals(arr):
 
         # populate diagonals string (while indexes are in-bounds)
         while j < len(arr) and i - j >= 0:
-
-            # if i - j < len(arr[0]):
             diag += str(arr[j][i - j]) + " "
-
             j += 1
 
         print diag
