@@ -13,13 +13,24 @@ def print_diagonals(arr):
     4 
 
     """
+                  # number of diagonals = len + witdh -1
+                  # (top left corner should count only once)
     for i in range((len(arr) + len(arr[0])) - 1):
+
         diag = ""
-        j = i / len(arr)
+
+        # j = which row we should start on
+        if i < len(arr):
+            j = i
+        else:
+            j = i - (len(arr) - 1)
+
         while i - j >= 0 and j < len(arr):
-            if i - j < len(arr):
-                diag += str(arr[j][i - j]) + " "
+
+            diag += str(arr[j][i - j]) + " "
+
             j += 1
+
         print diag
 
 
