@@ -12,6 +12,23 @@ def print_diagonals(arr):
     7 8 
     4 
 
+
+    >>> arr = [[9, 3,], [8, 6], [5, 5], [1, 2]]
+    >>> print_diagonals(arr)
+    9 
+    3 8 
+    6 5 
+    5 1 
+    2 
+
+    >>> arr = [[9, 3, 2, 4], [8, 6, 1, 2]]
+    >>> print_diagonals(arr)
+    9 
+    3 8 
+    2 6 
+    4 1 
+    2 
+
     """
                   # number of diagonals = len + witdh -1
                   # (top left corner should count only once)
@@ -20,14 +37,16 @@ def print_diagonals(arr):
         diag = ""
 
         # j = which row we should start on
-        if i < len(arr):
-            j = i
+        if i < len(arr[0]):
+            j = 0
         else:
-            j = i - (len(arr) - 1)
+            j = i - (len(arr[0]) - 1)
+
 
         while i - j >= 0 and j < len(arr):
 
-            diag += str(arr[j][i - j]) + " "
+            if i - j < len(arr):
+                diag += str(arr[j][i - j]) + " "
 
             j += 1
 
